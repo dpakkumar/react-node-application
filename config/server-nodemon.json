@@ -1,0 +1,22 @@
+{
+  "restartable": "rs",
+  "ignore": [
+  ".git",
+  "node_modules/**/node_modules",
+  "client/images"
+  ],
+  "verbose": true,
+  "execMap": {
+    "js": "node --harmony"
+  },
+  "watch": [
+    "app",
+    "service",
+    "index.js",
+    "views"
+  ],
+  "env": {
+    "NODE_ENV": "local"
+  },
+  "ext": "js json"
+}
