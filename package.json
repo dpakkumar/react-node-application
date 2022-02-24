@@ -27,7 +27,6 @@
     "css-loader": "^6.5.1",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
-    "mini-css-extract-plugin": "^2.5.2",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^6.2.1",
     "sass-loader": "^12.4.0",

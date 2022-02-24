@@ -1,0 +1,24 @@
+table {
+  margin: auto;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  margin: auto;
+  background-color: aliceblue;
+  border-radius: 0.5rem;
+  padding: 2rem;
+
+  thead {
+    height: 4rem;
+    
+    th {
+      padding-right: 2rem;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    td {
+      padding-right: 2rem;
+    }
+  }
+}
