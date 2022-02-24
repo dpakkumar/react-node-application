@@ -7,12 +7,8 @@
   <script src='/pages/assets.js'></script>
   <script>
     var link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href = "pages/" + window.assets["{{ pageName }}"][0];
-    document.getElementsByTagName("head")[0].appendChild(link);
-
     var s = document.createElement('script');
-    s.src = 'pages/' + window.assets["{{ pageName }}"][1];
+    s.src = 'pages/' + window.assets["{{ pageName }}"][0];
     s.type = "text/javascript";
     s.async = false;
     document.getElementsByTagName('head')[0].appendChild(s);

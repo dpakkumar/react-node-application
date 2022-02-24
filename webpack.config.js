@@ -1,11 +1,8 @@
-const webpack = require('webpack');
 const path = require('path')
 const clientPath = path.resolve(__dirname, 'client')
 const WebPackAssetManifest = require('webpack-assets-manifest');
 const { StatsWriterPlugin } = require("webpack-stats-plugin"); 
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const modifyAssetScript = () => {
@@ -19,7 +16,7 @@ const modifyAssetScript = () => {
 
 module.exports = [{
   entry: {
-    home: [path.resolve(__dirname, 'client', 'javascripts', 'index.jsx')]
+    home: [path.resolve(__dirname, 'client', 'javascripts', 'index.jsx')],
   },
   mode: 'development',
   output: {
@@ -40,19 +37,18 @@ module.exports = [{
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader'
-        ]
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader" 
+        }, {
+          loader: "sass-loader"
+        }],
       }
     ]
   },
   plugins: [
-    // new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: '[name].[hash:10].css'
-    }),
+    new CleanWebpackPlugin(),
     new WebPackAssetManifest({ output: 'assets.js' }),
     modifyAssetScript(),
     new CopyWebpackPlugin({
