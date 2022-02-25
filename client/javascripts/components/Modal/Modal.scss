@@ -1,0 +1,53 @@
+.ReactModalPortal{
+  .Overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.65);
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 101;
+  }
+  
+  .ReactModal__Content {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 1.875rem;
+    position: relative;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+
+    .close-button {
+      color: transparent;
+      background: transparent;
+      box-shadow: none;
+      border-color: transparent;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      z-index: 1;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+  }
+}
+
+.ReactModal__Body--open {
+  overflow: hidden !important;
+}
+
+.ReactModal__Overlay {
+  opacity: 0;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+}

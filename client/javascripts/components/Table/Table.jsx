@@ -3,7 +3,8 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import './Table.scss';
 
-const Table = ({ headers, entries, className }) => {
+const Table = ({ headers, entries, className, keyNames }) => {
+  console.log(entries);
   return (
     <table className={classnames('default-table', className)}>
       <thead>
@@ -22,7 +23,7 @@ const Table = ({ headers, entries, className }) => {
             <tr key={key}>
               <td>{key + 1}</td>
               {
-                Object.keys(entry).map(entryKey => (
+                keyNames.map(entryKey => (
                   <td>{entry[entryKey]}</td>
                 ))
               }
@@ -40,11 +41,13 @@ Table.propTypes = {
   className: PropTypes.string,
   entries: PropTypes.array,
   headers: PropTypes.array,
+  KeyNames: PropTypes.arraym
 };
 
 Table.defaultProps = {
   className: undefined,
   entries: [],
   headers: [],
+  KeyNames: [],
 };
 

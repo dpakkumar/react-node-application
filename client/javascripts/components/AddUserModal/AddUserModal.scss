@@ -1,0 +1,14 @@
+.add-user-modal {
+  padding: 8rem 4rem 4rem;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 20rem;
+    margin: auto;
+
+    input {
+      margin-bottom: 2rem;
+    }
+  }
+}
