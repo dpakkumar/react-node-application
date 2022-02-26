@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import './Table.scss';
 
 const Table = ({ headers, entries, className, keyNames }) => {
-  console.log(entries);
   return (
     <table className={classnames('default-table', className)}>
       <thead>
@@ -24,7 +23,7 @@ const Table = ({ headers, entries, className, keyNames }) => {
               <td>{key + 1}</td>
               {
                 keyNames.map(entryKey => (
-                  <td>{entry[entryKey]}</td>
+                  <td>{entryKey.includes('Date') ? entry[entryKey].split('T')[0] : entry[entryKey]}</td>
                 ))
               }
             </tr>

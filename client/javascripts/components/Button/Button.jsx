@@ -7,6 +7,7 @@ const Button = ({className, children, onClick}) => {
   return (
     <>
       <button
+        type='button'
         className={classnames('default-button', className)}
         onClick={onClick}
       >

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from '../components/Modal';
 
-const useModal = (isOpen = false, overlayClassName = '', elementId = '#root') => {
+const useModal = (modalContentProps = {}, isOpen = false, overlayClassName = '', elementId = '#root') => {
   const [modalState, setModalState] = useState({isOpen: isOpen, overlayClassName});
   
   const openModal = () => {
@@ -25,14 +25,9 @@ const useModal = (isOpen = false, overlayClassName = '', elementId = '#root') =>
         closeModal={handleCloseModal}
         overlayClassName={modalState.overlayClassName}
         elementId={elementId}
-        style={{
-          content: {
-            backgroundColor: '#F3F4F5',
-          },
-        }}
       >
         <div className='Modal-123'></div>
-        <ModalComponent closeModal={handleCloseModal} />
+        <ModalComponent closeModal={handleCloseModal} { ...modalContentProps } />
       </Modal>
     );
   };

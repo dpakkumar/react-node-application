@@ -8,6 +8,7 @@ import RemoveUser from '../components/RemoveUser';
 import './App.scss';
 
 const tableHeaders = ['S. No', 'User Id', 'Name', 'Email', 'Joining Date'];
+const entryKeyNames = ['userId', 'userName', 'email', 'joiningDate'];
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -17,8 +18,9 @@ const App = () => {
     setUsers(users.data);
   }, []);
 
-  const { openModal: openAddModal, RenderModal: RenderAddModal } = useModal();
-  const { openModal: openRemoveModal, RenderModal: RenderRemoveModal } = useModal();
+
+  const { openModal: openAddModal, RenderModal: RenderAddModal } = useModal({users, setUsers});
+  const { openModal: openRemoveModal, RenderModal: RenderRemoveModal } = useModal({setUsers});
 
   return (
     <div className='user-table'>
@@ -34,7 +36,7 @@ const App = () => {
       <Table
         headers={tableHeaders}
         entries={users}
-        keyNames={['userId', 'userName', 'email', 'joiningDate']}
+        keyNames={entryKeyNames}
       />
 
       {RenderAddModal(AddUserModal)}
