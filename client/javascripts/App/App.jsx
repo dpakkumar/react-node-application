@@ -13,9 +13,13 @@ const entryKeyNames = ['userId', 'userName', 'email', 'joiningDate'];
 const App = () => {
   const [users, setUsers] = useState([]);
 
-  useEffect(async () => {
-    const users = await axios.get('/users');
-    setUsers(users.data);
+  useEffect(() => {
+    const fetchUsers = async () => {
+      const users = await axios.get('/users');
+      setUsers(users.data);
+    };
+
+    fetchUsers();
   }, []);
 
 

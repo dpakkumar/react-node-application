@@ -19,11 +19,13 @@ const Button = ({className, children, onClick}) => {
 
 
 Button.defaultProps = {
+  children: <div/>,
   className: undefined,
   onClick: () => {},
 };
 
 Button.propTypes = {
+  children: PropTypes.element,
   className: PropTypes.string,
   onClick: PropTypes.func,
 };

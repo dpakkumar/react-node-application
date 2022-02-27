@@ -22,8 +22,8 @@ const Table = ({ headers, entries, className, keyNames }) => {
             <tr key={key}>
               <td>{key + 1}</td>
               {
-                keyNames.map(entryKey => (
-                  <td>{entryKey.includes('Date') ? entry[entryKey].split('T')[0] : entry[entryKey]}</td>
+                keyNames.map((entryKey, key) => (
+                  <td key={key}>{entryKey.includes('Date') ? entry[entryKey].split('T')[0] : entry[entryKey]}</td>
                 ))
               }
             </tr>
@@ -40,13 +40,13 @@ Table.propTypes = {
   className: PropTypes.string,
   entries: PropTypes.array,
   headers: PropTypes.array,
-  KeyNames: PropTypes.arraym
+  keyNames: PropTypes.array,
 };
 
 Table.defaultProps = {
   className: undefined,
   entries: [],
   headers: [],
-  KeyNames: [],
+  keyNames: [],
 };
 

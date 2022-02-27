@@ -6,13 +6,15 @@
   "scripts": {
     "start": "webpack --config webpack.config.js",
     "start:watch": "nodemon --config ./config/nodemon.json --exec npm run start",
-    "server": "nodemon --config ./config/server-nodemon.json index.js"
+    "server": "nodemon --config ./config/server-nodemon.json index.js",
+    "eslint": "eslint --ext .js --ext .jsx app/ client/"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.16.8",
     "@babel/core": "^7.16.10",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-proposal-class-properties": "^7.16.7",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
     "@babel/plugin-proposal-object-rest-spread": "^7.16.7",
@@ -25,6 +27,9 @@
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.1.0",
     "css-loader": "^6.5.1",
+    "eslint": "^8.10.0",
+    "eslint-plugin-react": "^7.29.2",
+    "eslint-plugin-react-hooks": "^4.3.0",
     "html-webpack-plugin": "^5.5.0",
     "nodemon": "^2.0.15",
     "postcss-flexbugs-fixes": "^5.0.2",

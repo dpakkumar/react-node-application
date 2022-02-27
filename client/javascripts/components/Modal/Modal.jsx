@@ -5,7 +5,7 @@ import Image from '../Image';
 import './Modal.scss';
 
 const Modal = ({
-  elementId, closeImage, overlayClassName, closeModal, children, isOpen,
+  elementId, overlayClassName, closeModal, children, isOpen,
 }) => {
  ReactModal.setAppElement(elementId);
   return (
