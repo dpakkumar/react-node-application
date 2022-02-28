@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Image = ({ src, alt, className, width, height }) => {
+const Image = ({ src, alt, className, width, height, onClick }) => {
   return (
     <img
       src={`/pages/assets/images/${src}`}
